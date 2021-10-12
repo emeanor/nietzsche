@@ -11,6 +11,9 @@ module App
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    # FactoryBot is supposed to check this directory by default, but it doesn't.
+    config.factory_bot.definition_file_paths = ["spec/factories"]
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
