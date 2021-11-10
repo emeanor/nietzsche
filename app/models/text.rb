@@ -4,8 +4,8 @@ class Text < ApplicationRecord
   
   enum duplicate: [:a, :b]
 
-  # has_many :chapter_texts
-  # has_many :chapters, -> { order(position: :asc) }, through: :chapter_texts
+  has_many :chapter_texts
+  has_many :chapters, through: :chapter_texts
 
   validates :nietzsche_number, inclusion: 1..372, presence: true
   validates :book_number, inclusion: { in: 1..4, allow_nil: true }

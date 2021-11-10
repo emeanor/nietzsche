@@ -8,7 +8,7 @@ RSpec.describe Text, type: :model do
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:text) }
   it { should validate_presence_of(:url_slug) }
-  #it { should have_many(:chapters).through(:chapter_texts) }
+  it { should have_many(:chapters).through(:chapter_texts) }
 
   describe 'uniqueness constraints' do
     subject { build(:text) }
