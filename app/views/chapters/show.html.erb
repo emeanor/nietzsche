@@ -1,0 +1,11 @@
+<h2>
+  <%= t('books.heading_one', book_number: @chapter.book.position) %>,
+  <%= t('chapters.heading_one', chapter_number: @chapter.position) %>
+</h2>
+
+<h1><%= @chapter.title %></h1>
+
+<% @chapter.texts.each do |text| %>
+  <% chapter_text = @chapter.chapter_texts.detect { |chapter_text| chapter_text.text_id == text.id } %>
+  <%= render partial: 'text_row', locals: { text: text, chapter_text: chapter_text } %>
+<% end %>

@@ -1,0 +1,5 @@
+<h1><%= t('texts.heading_all') %></h1>
+
+<% @texts.each do |text| %>
+  <%= render partial: 'text_row', locals: { text: text } %>
+<% end %>

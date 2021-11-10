@@ -1,0 +1,9 @@
+<h2><%= t('books.heading_one', book_number: @book.position) %></h2>
+<h1><%= @book.title %></h1>
+<h2><%= @book.subtitle if @book.has_subtitle? %></h2>
+
+<ol type="I">
+  <% @book.chapters.each do |chapter| %>
+    <li><%= link_to chapter.title, edition_book_chapter_path(@book.edition, @book.position, chapter.position) %></li>
+  <% end %>
+</ol>

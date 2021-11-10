@@ -1,0 +1,5 @@
+<h1><%= t('editions.heading_all') %></h1>
+
+<% @editions.each do |edition| %>
+  <%= render partial: 'edition_row', locals: { edition: edition } %>
+<% end %>

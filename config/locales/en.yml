@@ -30,4 +30,21 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app:
+    name: "Nietzsche's Will to Power"
+    name_html: "Nietzsche's <em>Will to Power</em>"
+  editions:
+    heading_all: 'All Editions'
+    edited_by_short: 'by %{username}'
+    edited_by_long: 'Edited by %{username}'
+  books:
+    heading_one: 'Book %{book_number}'
+    book_number_brackets: '(Book %{book_number})'
+  chapters:
+    heading_one: 'Chapter %{chapter_number}'
+  texts:
+    heading_all: 'The Texts'
+    number_short: '#%{text_number}'
+    number_and_title: '%{number}. %{title}'
+    kgw_numbers_long: 'KGW 8: %{notebook_number}[%{text_number}]'
+    kgw_numbers_short: '%{notebook_number}[%{text_number}]'

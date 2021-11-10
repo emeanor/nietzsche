@@ -1,3 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  resources :texts, only: [:index, :show], param: :url_slug
+
+  resources :editions do
+    get 'books', to: 'editions#show'
+
+    resources :books, except: [:index], param: :position do
+      get 'chapters', to: 'books#show'
+
+      resources :chapters, except: [:index], param: :position
+    end
+  end
+
 end
