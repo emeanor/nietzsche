@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title><%= t('app.name') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <h1><%= t('app.name_html') %></h1>
+    <hr />
+
+    <%= link_to t('texts.heading_all'), texts_path %> | <%= link_to t('editions.heading_all'), editions_path %>
+
+    <hr />
+
     <%= yield %>
   </body>
 </html>
