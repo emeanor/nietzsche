@@ -11,14 +11,16 @@
   </head>
 
   <body>
-    <h1><%= t('app.name_html') %></h1>
-    <hr />
+    <div id="header">
+      <h1><%= t('app.name_html') %></h1>
 
-    <%= link_to t('app.root_link'), root_path %> |
-    <%= link_to t('texts.heading_all'), texts_path %> | 
-    <%= link_to t('editions.heading_all'), editions_path %>
+      <hr />
+      <%= link_to t('app.root_link'), root_path %> |
+      <%= link_to t('texts.heading_all'), texts_path %> | 
+      <%= link_to t('editions.heading_all'), editions_path %>
+      <hr />
 
-    <hr />
+    </div>
 
     <%= yield %>
   </body>

@@ -1,2 +1,12 @@
 // Import Bootstrap v5  
 @import "~bootstrap/scss/bootstrap";
+
+body {
+  margin: 20px 100px;
+  background-color: white;
+  font-family:'Times New Roman', Times, serif;
+}
+
+#header {
+  text-align: center;
+}
