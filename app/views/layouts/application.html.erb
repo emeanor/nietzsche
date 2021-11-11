@@ -14,12 +14,21 @@
     <div id="header">
       <h1><%= t('app.name_html') %></h1>
 
-      <hr />
-      <%= link_to t('app.root_link'), root_path %> |
-      <%= link_to t('texts.heading_all'), texts_path %> | 
-      <%= link_to t('editions.heading_all'), editions_path %>
-      <hr />
-
+      <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container-fluid justify-content-center">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <%= link_to t('app.root_link'), root_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('texts.heading_all'), texts_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('editions.heading_all'), editions_path, class: 'nav-link' %>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
 
     <%= yield %>
