@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root to: 'main#index'
   
   resources :texts, only: [:index, :show], param: :url_slug
 

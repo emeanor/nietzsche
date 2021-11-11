@@ -33,6 +33,7 @@ en:
   app:
     name: "Nietzsche's Will to Power"
     name_html: "Nietzsche's <em>Will to Power</em>"
+    root_link: 'Home'
   editions:
     heading_all: 'All Editions'
     edited_by_short: 'by %{username}'
