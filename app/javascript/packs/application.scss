@@ -8,7 +8,6 @@ body {
 }
 
 #header {
-  text-align: center;
   margin-bottom: 20px;
 
   nav .navbar-nav li a {
@@ -36,12 +35,12 @@ body {
     color: #930000;
   }
 
+  .card {
+    margin-bottom: 25px;
+  }
+
   .main-card-link {
     font-size: large;
     text-decoration: none;
-  }
-
-  .card {
-    margin-bottom: 25px;
   }
 }

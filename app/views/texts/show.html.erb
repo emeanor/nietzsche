@@ -1,12 +1,14 @@
-<h1><%= t('texts.number_short', text_number: @text.url_slug) %></h1>
-<h3>
-  <%= kgw_numbers_string(@text) %>
+<div class="text-center mb-5">
+  <h2><%= @text.url_slug %></h2>
+  <h2 class="my-3">"<%= @text.title %>"</h2>
+  <h5>
+    <% if @text.has_book_number? %>
+      <%= t('books.heading_one', book_number: @text.roman_book_number) %>
+      <br/>
+    <% end %>
 
-  <% if @text.has_book_number? %>
-      / <%= t('books.heading_one', book_number: @text.roman_book_number) %>
-  <% end %>
-</h3>
-
-<h2><%= @text.title %></h2>
+    <%= kgw_numbers_string(@text) %>
+  </h5>
+</div>
 
 <p><%= @text.text %></p>
