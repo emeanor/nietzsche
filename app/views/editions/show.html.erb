@@ -1,24 +1,28 @@
 
 <div class="text-center mb-5">
   <h1><%= @edition.title %></h1>
-  <h4 class="mb-4"><%= @edition.subtitle %></h4>
+
+  <% if @edition.has_subtitle? %>
+    <h4 class="mb-4"><%= @edition.subtitle %></h4>
+  <% end %>
+
   <%= t('editions.edited_by', username: @edition.user.username) %>
 </div>
 
-<div class="table-of-contents mb-5">
+<div class="table-of-contents mb-5 fs-5">
   <div class="contents-list">
     <ol type="I">
       <% @edition.books.each do |book| %>
-        <h5>
           <li>
-            <%= link_to book.title, edition_book_path(@edition, book.position), class: 'text-decoration-none' %>
-            <ol class="mt-2 mb-4">
-              <% book.chapters.each do |chapter| %>
-                <li><%= link_to chapter.title, edition_book_chapter_path(book, book.position, chapter.position), class: 'text-decoration-none' %></li>
-              <% end %>
-            </ol>
+            <%= book.has_subtitle? ? "#{book.title}: #{book.subtitle}" : "#{book.title}" %>
+            <% if book.has_chapters? %>
+              <ol class="mb-2">
+                <% book.chapters.each do |chapter| %>
+                  <li><%= link_to chapter.title, edition_book_chapter_path(book, book.position, chapter.position), class: 'text-decoration-none' %></li>
+                <% end %>
+              </ol>
+            <% end %>
           </li>
-        </h5>
       <% end %>
     </ol>
   </div>

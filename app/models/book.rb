@@ -9,7 +9,11 @@ class Book < ApplicationRecord
   validates :subtitle, length: { maximum: 255 }
 
   def has_subtitle?
-    !self.subtitle.blank?
+    self.subtitle.present?
+  end
+
+  def has_chapters?
+    self.chapters.any?
   end
 
   def has_chapter?(chapter_id)
