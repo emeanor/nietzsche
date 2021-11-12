@@ -8,7 +8,7 @@
 <div class="table-of-contents mb-5">
   <ol type="I" class="contents-list">
     <% @edition.books.each do |book| %>
-      <li><%= link_to book.title, edition_book_path(@edition, book.position) %></li>
+      <h5><li><%= link_to book.title, edition_book_path(@edition, book.position), class: 'text-decoration-none' %></li></h4>
     <% end %>
   </ol>
 </div>
