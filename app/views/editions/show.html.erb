@@ -6,9 +6,20 @@
 </div>
 
 <div class="table-of-contents mb-5">
-  <ol type="I" class="contents-list">
-    <% @edition.books.each do |book| %>
-      <h5><li><%= link_to book.title, edition_book_path(@edition, book.position), class: 'text-decoration-none' %></li></h4>
-    <% end %>
-  </ol>
+  <div class="contents-list">
+    <ol type="I">
+      <% @edition.books.each do |book| %>
+        <h5>
+          <li>
+            <%= link_to book.title, edition_book_path(@edition, book.position), class: 'text-decoration-none' %>
+            <ol class="mt-2 mb-4">
+              <% book.chapters.each do |chapter| %>
+                <li><%= link_to chapter.title, edition_book_chapter_path(book, book.position, chapter.position), class: 'text-decoration-none' %></li>
+              <% end %>
+            </ol>
+          </li>
+        </h5>
+      <% end %>
+    </ol>
+  </div>
 </div>
