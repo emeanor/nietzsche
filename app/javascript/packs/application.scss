@@ -3,12 +3,13 @@
 
 body {
   margin: 20px 100px;
-  background-color: white;
+  background-color: #eee;
   font-family:'Times New Roman', Times, serif;
 }
 
 #header {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 #header nav .navbar-nav li a {
@@ -19,22 +20,19 @@ body {
   color: #cc0000 !important;
 }
 
+#body {
+  background-color: #fff;
+  padding: 20px 30px;
+}
 
-// #body p a:link {
-//   color: #930000;
-//   text-decoration: underline #000 1px dotted;
-// }
+#body .heading {
+  margin-left: -5px;
+}
 
-// #body p a:visited {
-//   color: #550000;
-// }
+#body a {
+  color: #930000;
+}
 
-// #body p a:hover {
-//   color: #cc0000;
-//   text-decoration: underline #000 1px dashed;
-// }
-
-// #body p a:active {
-//   color: #cc0000;
-//   text-decoration: underline #000 1px dashed;
-//}
+#body .text-headline {
+  font-size: large;
+}

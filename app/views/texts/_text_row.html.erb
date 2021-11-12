@@ -1,12 +1,10 @@
-<h3>
-  <%= link_to nietzsche_number_and_title_string(text), text_path(text.url_slug) %>
-  <% if text.has_book_number? %>
+<%= link_to nietzsche_number_and_title_string(text), text_path(text.url_slug), class: 'text-headline' %><br />
+
+
+<% if text.has_book_number? %>
     <%= t('books.book_number_brackets', book_number: text.roman_book_number) %>
   <% end %>
-</h3>
-
+  
 <%= kgw_numbers_string(text) %>
 
 <p><%= text.text %></p>
-
-<br />
