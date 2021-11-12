@@ -1,9 +1,14 @@
-<h1><%= @edition.title %></h1>
-<h2><%= @edition.subtitle %></h2>
-<%= t('editions.edited_by_long', username: @edition.user.username) %>
 
-<ol type="I">
-  <% @edition.books.each do |book| %>
-    <li><%= link_to book.title, edition_book_path(@edition, book.position) %></li>
-  <% end %>
-</ol>
+<div class="text-center mb-5">
+  <h1><%= @edition.title %></h1>
+  <h4 class="mb-4"><%= @edition.subtitle %></h4>
+  <%= t('editions.edited_by', username: @edition.user.username) %>
+</div>
+
+<div class="mb-5" style="margin:auto; width:80%">
+  <ol type="I" style="list-style-position: inside;">
+    <% @edition.books.each do |book| %>
+      <li><%= link_to book.title, edition_book_path(@edition, book.position) %></li>
+    <% end %>
+  </ol>
+</div>
