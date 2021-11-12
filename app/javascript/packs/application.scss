@@ -10,38 +10,38 @@ body {
 #header {
   text-align: center;
   margin-bottom: 20px;
-}
 
-#header nav .navbar-nav li a {
-  color: #930000 !important;
-}
+  nav .navbar-nav li a {
+    color: #930000 !important;
+  }
 
-#header nav .navbar-nav li a:hover {
-  color: #cc0000 !important;
+  nav .navbar-nav li a:hover {
+    color: #cc0000 !important;
+  }
 }
 
 #body {
   background-color: #fff;
   padding: 20px 30px;
-}
 
-#body .heading {
-  margin-left: -5px;
-}
+  .heading {
+    margin-left: -5px;
+  }
 
-#body .preamble {
-  margin-bottom: 25px;
-}
+  .preamble {
+    margin-bottom: 25px;
+  }
 
-#body a {
-  color: #930000;
-}
+  a {
+    color: #930000;
+  }
 
-#body .main-card-link {
-  font-size: large;
-  text-decoration: none;
-}
+  .main-card-link {
+    font-size: large;
+    text-decoration: none;
+  }
 
-#body .card {
-  margin-bottom: 25px;
+  .card {
+    margin-bottom: 25px;
+  }
 }
