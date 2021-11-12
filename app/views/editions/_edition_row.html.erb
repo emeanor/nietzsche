@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
     <%= link_to title_and_subtitle_string(edition), edition_path(edition), class: 'main-card-link' %><br />
-    <%= t('editions.created_by', username: edition.user.username) %>
+    <%= t('editions.edited_by', username: edition.user.username) %>
   </div>
 
   <div class="card-body">
