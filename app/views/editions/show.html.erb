@@ -5,8 +5,8 @@
   <%= t('editions.edited_by', username: @edition.user.username) %>
 </div>
 
-<div class="mb-5" style="margin:auto; width:80%">
-  <ol type="I" style="list-style-position: inside;">
+<div class="table-of-contents mb-5">
+  <ol type="I" class="contents-list">
     <% @edition.books.each do |book| %>
       <li><%= link_to book.title, edition_book_path(@edition, book.position) %></li>
     <% end %>
