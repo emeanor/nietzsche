@@ -1,3 +1,10 @@
-<h3><%= link_to title_and_subtitle_string(edition), edition_path(edition) %></h3>
-<%= t('editions.edited_by_short', username: edition.user.username) %>
-<br />
+<div class="card">
+  <div class="card-header">
+    <%= link_to title_and_subtitle_string(edition), edition_path(edition), class: 'main-card-link' %><br />
+    <%= t('editions.created_by', username: edition.user.username) %>
+  </div>
+
+  <div class="card-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+</div>

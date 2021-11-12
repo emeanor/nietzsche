@@ -2,7 +2,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  margin: 20px 100px;
+  margin: 40px 12%;
   background-color: #eee;
   font-family:'Times New Roman', Times, serif;
 }
@@ -30,17 +30,18 @@ body {
 }
 
 #body .preamble {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 #body a {
   color: #930000;
 }
 
-#body .text-headline {
+#body .main-card-link {
   font-size: large;
+  text-decoration: none;
 }
 
 #body .card {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }

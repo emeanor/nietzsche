@@ -38,6 +38,7 @@ en:
     heading_all: 'All Editions'
     edited_by_short: 'by %{username}'
     edited_by_long: 'Edited by %{username}'
+    created_by: 'Created by %{username}'
   books:
     heading_one: 'Book %{book_number}'
     book_number_brackets: '(Book %{book_number})'
