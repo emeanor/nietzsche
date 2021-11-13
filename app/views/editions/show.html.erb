@@ -14,7 +14,7 @@
     <ol type="I">
       <% @edition.books.each do |book| %>
           <li>
-            <%= book.has_subtitle? ? "#{book.title}: #{book.subtitle}" : "#{book.title}" %>
+            <%= link_to book.has_subtitle? ? "#{book.title}: #{book.subtitle}" : "#{book.title}", edition_book_path(@edition, book), class: 'text-decoration-none' %>
             <% if book.has_chapters? %>
               <ol class="mb-2">
                 <% book.chapters.each do |chapter| %>
