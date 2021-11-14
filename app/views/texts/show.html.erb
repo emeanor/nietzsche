@@ -7,7 +7,7 @@
       <br/>
     <% end %>
 
-    <%= kgw_numbers_string(@text) %>
+    <%= t('texts.kgw_numbers_long', notebook_number: @text.kgw_notebook_number, text_number: @text.kgw_text_number) %>
   </h5>
 </div>
 
