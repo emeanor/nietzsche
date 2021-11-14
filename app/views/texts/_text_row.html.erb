@@ -6,7 +6,7 @@
         <%= t('books.book_number_brackets', book_number: text.roman_book_number) %>
       <% end %>
 
-    <%= t('texts.kgw_numbers_long', notebook_number: text.kgw_notebook_number, text_number: text.kgw_text_number) %>
+    <%= kgw_numbers_string(text) %>
   </div>
 
   <div class="card-body">
