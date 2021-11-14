@@ -9,8 +9,16 @@ class Chapter < ApplicationRecord
   validates :title, length: { maximum: 255 }, presence: true
   validates :subtitle, length: { maximum: 255 }
 
+  def edition
+    self.book.edition
+  end
+
+  def editor
+    self.edition.user
+  end
+  
   def has_subtitle?
-    !self.subtitle.blank?
+    self.subtitle.present?
   end
 
   def has_text?(text_id)

@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <%= link_to sanitize(t('editions.title_and_editor', title: @book.edition.title, editor: @book.edition.user.username)), edition_path(@book.edition) %>
+      <%= link_to sanitize(t('editions.title_and_editor', title: @book.edition.title, editor: @book.editor.username)), edition_path(@book.edition) %>
     </li>
     <li class="breadcrumb-item active" aria-current="page"><%= t('books.number_and_title', number: @book.position, title: @book.title) %></li>
   </ol>

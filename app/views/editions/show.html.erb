@@ -5,7 +5,7 @@
     <h4 class="mb-4"><%= @edition.subtitle %></h4>
   <% end %>
 
-  <%= t('editions.edited_by', username: @edition.user.username) %>
+  <%= t('editions.edited_by', username: @edition.editor.username) %>
 </div>
 
 <div class="table-of-contents mb-5 fs-5">

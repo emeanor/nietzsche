@@ -6,8 +6,12 @@ class Edition < ApplicationRecord
   validates :title, length: { maximum: 255 }, presence: true
   validates :subtitle, length: { maximum: 255 }
 
+  def editor
+    return self.user
+  end
+  
   def has_subtitle?
-    !self.subtitle.blank?
+    self.subtitle.present?
   end
 
   def has_book?(book_id)
