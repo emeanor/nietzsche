@@ -1,12 +1,12 @@
 <div class="card">
   <div class="card-header">
-    <%= link_to nietzsche_number_and_title_string(text), text_path(text.url_slug), class: 'main-card-link' %><br />
+    <%= link_to t('texts.number_and_title', number: text.url_slug, title: text.title), text_path(text.url_slug), class: 'main-card-link' %><br />
 
     <% if text.has_book_number? %>
         <%= t('books.book_number_brackets', book_number: text.roman_book_number) %>
       <% end %>
 
-    <%= kgw_numbers_string(text) %>
+    <%= t('texts.kgw_numbers_long', notebook_number: text.kgw_notebook_number, text_number: text.kgw_text_number) %>
   </div>
 
   <div class="card-body">
