@@ -1,5 +1,4 @@
-<%= link_to sanitize("<< <em>#{@book.edition.title}</em> (ed. #{@book.edition.user.username})"), edition_path(@book.edition), class: 'text-decoration-none' %>
-
+<%= link_to sanitize("<i class='fas fa-chevron-circle-left'></i> <em>#{@book.edition.title}</em> (ed. #{@book.edition.user.username})"), edition_path(@book.edition) %>
 <div class="text-center mt-3 mb-5">
   <h2>Book <%= @book.position %></h2>
   <h2><%= @book.title %></h2>
@@ -14,7 +13,7 @@
     <ol>
       <% @book.chapters.each do |chapter| %>
           <li>
-            <%= link_to chapter.has_subtitle? ? "#{chapter.title}: #{chapter.subtitle}" : "#{chapter.title}", edition_book_chapter_path(@book.edition, @book, chapter), class: 'text-decoration-none' %>
+            <%= link_to chapter.has_subtitle? ? "#{chapter.title}: #{chapter.subtitle}" : "#{chapter.title}", edition_book_chapter_path(@book.edition, @book, chapter) %>
           </li>
       <% end %>
     </ol>

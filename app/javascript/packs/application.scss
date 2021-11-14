@@ -33,6 +33,11 @@ body {
 
   a {
     color: #930000;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #cc0000;
   }
 
   .card {
