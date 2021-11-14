@@ -1,6 +1,9 @@
-<%= link_to sanitize("<i class='fas fa-chevron-circle-left'></i> <em>#{@book.edition.title}</em> (ed. #{@book.edition.user.username})"), edition_path(@book.edition) %>
+<%= link_to sanitize(
+  "<i class='fas fa-chevron-circle-left'></i> <em>#{@book.edition.title}</em> (#{t('editions.edited_by_short', username: @book.edition.user.username)})"
+), edition_path(@book.edition) %>
+
 <div class="text-center mt-3 mb-5">
-  <h3 class="mb-3">Book <%= @book.position %></h2>
+  <h3 class="mb-3"><%= t('books.heading_one', book_number: @book.position) %></h2>
   <h2><%= @book.title %></h2>
 
   <% if @book.has_subtitle? %>

@@ -1,9 +1,19 @@
-<h2>
-  <%= t('books.heading_one', book_number: @chapter.book.position) %>,
-  <%= t('chapters.heading_one', chapter_number: @chapter.position) %>
-</h2>
+<%= link_to sanitize(
+  "<i class='fas fa-chevron-circle-left'></i> <em>#{@chapter.book.edition.title}</em> (#{t('editions.edited_by_short', username: @chapter.book.edition.user.username)})"
+), edition_path(@chapter.book.edition) %>
 
-<h1><%= @chapter.title %></h1>
+<%= link_to sanitize(
+  "&nbsp;<i class='fas fa-angle-double-left'></i>&nbsp; #{t('books.heading_one', book_number: @chapter.book.position)}: #{@chapter.book.title}"
+), edition_book_path(@chapter.book) %>
+
+<div class="text-center mt-3 mb-5">
+  <h3 class="mb-3"><%= t('chapters.heading_one', chapter_number: @chapter.position) %></h2>
+  <h2><%= @chapter.title %></h2>
+
+  <% if @chapter.has_subtitle? %>
+    <h4 class="mt-3 mb-4"><%= @chapter.subtitle %></h4>
+  <% end %>
+</div>
 
 <% @chapter.texts.each do |text| %>
   <% chapter_text = @chapter.chapter_texts.detect { |chapter_text| chapter_text.text_id == text.id } %>
