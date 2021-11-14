@@ -37,12 +37,14 @@ en:
   editions:
     heading_all: 'All Editions'
     edited_by: 'Edited by %{username}'
-    edited_by_short: 'ed. %{username}'
+    title_and_editor: '<em>%{title}</em> (ed. %{editor})'
   books:
-    heading_one: 'Book %{book_number}'
+    heading: 'Book %{book_number}'
+    number_and_title: 'Book %{number}: %{title}'
     book_number_brackets: '(Book %{book_number})'
   chapters:
-    heading_one: 'Chapter %{chapter_number}'
+    heading: 'Chapter %{number}'
+    number_and_title: 'Chapter %{number}: %{title}'
   texts:
     heading_all: 'The Texts'
     number_short: '#%{text_number}'

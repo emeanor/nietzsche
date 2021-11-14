@@ -1,9 +1,14 @@
-<%= link_to sanitize(
-  "<i class='fas fa-chevron-circle-left'></i> <em>#{@book.edition.title}</em> (#{t('editions.edited_by_short', username: @book.edition.user.username)})"
-), edition_path(@book.edition) %>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to sanitize(t('editions.title_and_editor', title: @book.edition.title, editor: @book.edition.user.username)), edition_path(@book.edition) %>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><%= t('books.number_and_title', number: @book.position, title: @book.title) %></li>
+  </ol>
+</nav>
 
-<div class="text-center mt-3 mb-5">
-  <h3 class="mb-3"><%= t('books.heading_one', book_number: @book.position) %></h2>
+<div class="text-center my-5">
+  <h3 class="mb-3"><%= t('books.heading', book_number: @book.position) %></h2>
   <h2><%= @book.title %></h2>
 
   <% if @book.has_subtitle? %>
