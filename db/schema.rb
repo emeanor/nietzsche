@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_170505) do
+ActiveRecord::Schema.define(version: 2021_11_15_211230) do
 
   create_table "books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_11_10_170505) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "editor_intro"
     t.index ["user_id"], name: "index_editions_on_user_id"
   end
 
