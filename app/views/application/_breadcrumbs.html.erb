@@ -10,7 +10,7 @@
       </li>
     <% else %>
       <li class="breadcrumb-item">
-        <%= link_to sanitize(t('books.number_and_title', number: current.book.position, title: current.book.title)), edition_book_path(current.book.edition, current.book) %>
+        <%= link_to sanitize(t('books.number_and_title', number: current.book.position, title: current.book.title)), edition_book_path(current.book.edition, current.book.position) %>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
         <%= t('chapters.number_and_title', number: current.position, title: current.title) %>
