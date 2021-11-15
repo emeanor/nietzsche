@@ -57,4 +57,16 @@ body {
   .contents-list {
     list-style-position: inside;
   }
+
+  .text-number {
+    display: inline;
+  }
+
+  .text-detail-toggle[aria-expanded=false] .expanded {
+    display: none;
+  }
+
+  .text-detail-toggle[aria-expanded=true] .collapsed {
+    display: none;
+  }
 }

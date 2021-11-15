@@ -1,4 +1,30 @@
+<% collapse_id = "text-detail-#{text.id}-#{rand(1000)}" %>
+
+<div class="text-center mb-3">
+  <h3 class="text-number"><%= chapter_text.position %></h3>
+  <button class="btn text-detail-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#<%= collapse_id %>" aria-expanded="false" aria-controls="<%= collapse_id %>">
+    <span class="collapsed"><i class="fas fa-chevron-down"></i></span>
+    <span class="expanded"><i class="fas fa-chevron-up"></i></span>
+  </button>
+
+  <div class="text-detail collapse container mt-3" id="<%= collapse_id %>">
+    <div class="row">
+      <div class="col">
+        Nietzsche's Number<br />
+        <%= link_to text.nietzsche_number, text_path(text.url_slug), class: 'fw-bold' %>
+      </div>
+      <div class="col">
+        <%= kgw_numbers_string(text) %>
+      </div>
+      <div class="col">
+        Nietzsche's Placement<br />
+        <!-- TODO: This needs to link to something appropriate. The texts filtered by book number? -->
+        <%= link_to t('books.heading', book_number: text.book_number), text_path(text.url_slug), class: 'fw-bold' %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="mb-5">
-  <h3 class="text-center mb-3"><%= chapter_text.position %></h3>
   <%= text.text %>
 </div>
