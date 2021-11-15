@@ -1,4 +1,4 @@
-<div class="text-center mt-4 mb-5">
+<div class="text-center my-5">
   <h1><%= @edition.title %></h1>
 
   <% if @edition.has_subtitle? %>
@@ -11,7 +11,6 @@
 <div class="card edition-section">
   <div class="card-header">Table of Contents</div>
   <div class="card-body mt-2">
-    <div class="fs-5">
       <div class="contents-list">
         <ol type="I">
           <% @edition.books.each do |book| %>
@@ -28,7 +27,6 @@
           <% end %>
         </ol>
       </div>
-    </div>
   </div>
 </div>
 
