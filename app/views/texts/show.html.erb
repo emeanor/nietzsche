@@ -1,14 +1,14 @@
 <div class="text-center mb-5">
   <h2><%= @text.url_slug %></h2>
   <h2 class="my-3">"<%= @text.title %>"</h2>
-  <h5>
     <% if @text.has_book_number? %>
       <%= t('books.heading_one', book_number: @text.roman_book_number) %>
       <br/>
     <% end %>
 
-    <%= kgw_numbers_string(@text) %>
-  </h5>
+    <div class="mt-4">
+      <%= render partial: 'text-detail', locals: { text: @text } %>
+    </div>
 </div>
 
 <p><%= @text.text %></p>
