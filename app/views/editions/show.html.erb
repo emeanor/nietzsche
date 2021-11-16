@@ -5,7 +5,9 @@
     <h4 class="mb-4"><%= @edition.subtitle %></h4>
   <% end %>
 
-  <%= t('editions.edited_by', username: @edition.editor.username) %>
+  <div <%= @edition.has_subtitle? ? '' : 'class=mt-4'  %>>
+    <%= t('editions.edited_by', username: @edition.editor.username) %>
+  </div>
 </div>
 
 <div class="card edition-section">
