@@ -1,7 +1,13 @@
+<% link_nietzsche_number = true if local_assigns[:link_nietzsche_number].nil? %>
+
 <div class="row">
   <div class="col">
     Nietzsche's Number<br />
-    <%= link_to text.nietzsche_number, text_path(text.url_slug), class: 'fw-bold' %>
+    <% if link_nietzsche_number %>
+      <%= link_to text.nietzsche_number, text_path(text.url_slug), class: 'fw-bold' %>
+    <% else %>
+      <span class="fw-bold"><%= text.nietzsche_number %></span>
+    <% end %>
   </div>
   <div class="col">
     <%= kgw_numbers_string(text) %>
