@@ -35,15 +35,24 @@ body {
     }
 
     .navbar-nav li {
+      a {
+        color: $secondary;
+      }
+
       a:hover {
         color: $primary;
       }
     }
 
     .form-control:focus {
-      border-color: $primary;
-      box-shadow: 0.3px 0.3px 2px $secondary;
+      border-color: $secondary;
+      box-shadow: 0.3px 0.3px 2px $primary;
     }
+  }
+
+  #user-bar {
+    height: 25px;
+    background-color: $secondary;
   }
 }
 
