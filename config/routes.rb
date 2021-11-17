@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root to: 'main#index'
   
   resources :texts, only: [:index, :show], param: :url_slug
