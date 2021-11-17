@@ -36,6 +36,7 @@ en:
     root_link: 'Home'
   editions:
     heading_all: 'All Editions'
+    heading_navbar: 'Editions'
     edited_by: 'Edited by %{username}'
     title_and_editor: '<em>%{title}</em> (ed. %{editor})'
   books:
@@ -47,6 +48,7 @@ en:
     number_and_title: 'Chapter %{number}: %{title}'
   texts:
     heading_all: 'The Texts'
+    heading_navbar: 'Texts'
     number_short: '#%{text_number}'
     number_and_title: '%{number}. %{title}'
     kgw_numbers_long: 'KGW 8: %{notebook_number}[%{text_number}]'

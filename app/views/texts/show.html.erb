@@ -1,9 +1,9 @@
-<div class="text-center mb-5">
-  <h2 class="my-3">"<%= @text.title %>"</h2>
+<div class="text-center mb-4">
+  <h2 class="my-3"><%= @text.title %></h2>
 
     <div class="mt-4">
       <%= render partial: 'text-detail', locals: { text: @text, link_nietzsche_number: false } %>
     </div>
 </div>
 
-<p><%= @text.text %></p>
+<%= @text.text %>

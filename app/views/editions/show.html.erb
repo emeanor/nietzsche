@@ -1,42 +1,44 @@
-<div class="text-center my-5">
-  <h1><%= @edition.title %></h1>
+<div id="edition">
+  <div class="text-center my-5">
+    <h1><%= @edition.title %></h1>
 
-  <% if @edition.has_subtitle? %>
-    <h4 class="mb-4"><%= @edition.subtitle %></h4>
-  <% end %>
+    <% if @edition.has_subtitle? %>
+      <h4 class="mb-4"><%= @edition.subtitle %></h4>
+    <% end %>
 
-  <div <%= @edition.has_subtitle? ? '' : 'class=mt-4'  %>>
-    <%= t('editions.edited_by', username: @edition.editor.username) %>
-  </div>
-</div>
-
-<div class="card edition-section">
-  <div class="card-header">Table of Contents</div>
-  <div class="card-body mt-2">
-      <div class="contents-list">
-        <ol type="I">
-          <% @edition.books.each do |book| %>
-              <li>
-                <%= link_to book.has_subtitle? ? "#{book.title}: #{book.subtitle}" : "#{book.title}", edition_book_path(@edition, book.position) %>
-                <% if book.has_chapters? %>
-                  <ol class="mb-2">
-                    <% book.chapters.each do |chapter| %>
-                      <li><%= link_to chapter.title, edition_book_chapter_path(@edition, book.position, chapter.position) %></li>
-                    <% end %>
-                  </ol>
-                <% end %>
-              </li>
-          <% end %>
-        </ol>
-      </div>
-  </div>
-</div>
-
-<% if @edition.has_editor_intro? %>
-  <div class="card edition-section">
-    <div class="card-header">Editor's Introduction</div>
-    <div class="card-body">
-      <%= @edition.editor_intro %>
+    <div <%= @edition.has_subtitle? ? '' : 'class=mt-4'  %>>
+      <%= t('editions.edited_by', username: @edition.editor.username) %>
     </div>
   </div>
-<% end %>
+
+  <div class="card section">
+    <div class="card-header">Table of Contents</div>
+    <div class="card-body mt-2">
+        <div class="contents-list">
+          <ol type="I">
+            <% @edition.books.each do |book| %>
+                <li>
+                  <%= link_to book.has_subtitle? ? "#{book.title}: #{book.subtitle}" : "#{book.title}", edition_book_path(@edition, book.position) %>
+                  <% if book.has_chapters? %>
+                    <ol class="mb-2">
+                      <% book.chapters.each do |chapter| %>
+                        <li><%= link_to chapter.title, edition_book_chapter_path(@edition, book.position, chapter.position) %></li>
+                      <% end %>
+                    </ol>
+                  <% end %>
+                </li>
+            <% end %>
+          </ol>
+        </div>
+    </div>
+  </div>
+
+  <% if @edition.has_editor_intro? %>
+    <div class="card section">
+      <div class="card-header">Editor's Introduction</div>
+      <div class="card-body">
+        <%= @edition.editor_intro %>
+      </div>
+    </div>
+  <% end %>
+</div>

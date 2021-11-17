@@ -1,15 +1,17 @@
 <%= render partial: 'breadcrumbs', locals: { current: @chapter } %>
 
-<div class="text-center my-5">
-  <h3 class="mb-3"><%= t('chapters.heading', number: @chapter.position) %></h2>
-  <h2><%= @chapter.title %></h2>
+<div id="chapter">
+  <div class="text-center my-5">
+    <h3 class="mb-3"><%= t('chapters.heading', number: @chapter.position) %></h2>
+    <h2><%= @chapter.title %></h2>
 
-  <% if @chapter.has_subtitle? %>
-    <h4 class="mt-3 mb-4"><%= @chapter.subtitle %></h4>
+    <% if @chapter.has_subtitle? %>
+      <h4 class="mt-3 mb-4"><%= @chapter.subtitle %></h4>
+    <% end %>
+  </div>
+
+  <% @chapter.texts.each do |text| %>
+    <% chapter_text = @chapter.chapter_texts.detect { |chapter_text| chapter_text.text_id == text.id } %>
+    <%= render partial: 'text_row', locals: { text: text, chapter_text: chapter_text } %>
   <% end %>
 </div>
-
-<% @chapter.texts.each do |text| %>
-  <% chapter_text = @chapter.chapter_texts.detect { |chapter_text| chapter_text.text_id == text.id } %>
-  <%= render partial: 'text_row', locals: { text: text, chapter_text: chapter_text } %>
-<% end %>

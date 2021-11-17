@@ -1,77 +1,85 @@
-// Import Bootstrap v5  
+// Custom Bootstrap colors
+$primary: #930000;
+$primary-hover: #7d0000;
+$secondary: #635147;
+
+$enable-negative-margins: true;
+
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  margin: 40px 10%;
-  background-color: #eee;
+  background-color: #efefef;
   font-family:'Times New Roman', Times, serif;
+
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $primary-hover;
+  }
 }
 
 #header {
   margin-bottom: 20px;
 
-  nav .navbar-nav li a {
-    color: #930000 !important;
+  .logo {
+    color: $primary;
   }
 
-  nav .navbar-nav li a:hover {
-    color: #cc0000 !important;
+  nav {
+    .container-fluid {
+      width: 80%;
+      margin: auto;
+    }
+
+    .navbar-nav li {
+      a:hover {
+        color: $primary;
+      }
+    }
+
+    .form-control:focus {
+      border-color: $primary;
+      box-shadow: 0.3px 0.3px 1px $secondary;
+    }
   }
 }
 
 #body {
   background-color: #fff;
+  width: 80%;
+  margin: auto;
   padding: 30px 30px;
-
-  .heading {
-    margin-left: -5px;
-  }
-
-  .preamble {
-    margin-bottom: 25px;
-  }
-
-  a {
-    color: #930000;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #cc0000;
-  }
-
-  .card {
-    margin-bottom: 25px;
-  }
-
-  .main-card-link {
-    font-size: large;
-    text-decoration: none;
-  }
 
   .contents-list {
     list-style-position: inside;
   }
 
-  .text-number {
-    display: inline;
+  #chapter {
+    .text-number {
+      display: inline;
+    }
+  
+    .text-detail-toggle[aria-expanded=false] .expanded {
+      display: none;
+    }
+  
+    .text-detail-toggle[aria-expanded=true] .collapsed {
+      display: none;
+    }
   }
 
-  .text-detail-toggle[aria-expanded=false] .expanded {
-    display: none;
-  }
-
-  .text-detail-toggle[aria-expanded=true] .collapsed {
-    display: none;
-  }
-
-  .edition-section {
-    margin: auto;
-    width: 85%;
-    margin-bottom: 45px;
-
-    .card-header {
-      font-size: larger;
+  #edition {
+    .section {
+      margin: auto;
+      width: 85%;
+      margin-bottom: 45px;
+  
+      .card-header {
+        font-size: larger;
+      }
     }
   }
 }
