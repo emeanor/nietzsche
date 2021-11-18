@@ -28,8 +28,8 @@ class Book < ApplicationRecord
     position.is_a?(Integer) && position > 0 && position <= self.chapters.maximum('position')
   end  
 
-  def create_chapter(title, subtitle=nil, position=nil)
-    chapter = self.chapters.create(title: title, subtitle: subtitle)
+  def add_chapter(chapter, position = nil)
+    self.chapters << chapter
     move_chapter(chapter, position) unless position.nil?
     return chapter
   end
