@@ -27,8 +27,8 @@ class Edition < ApplicationRecord
     position.is_a?(Integer) && position > 0 && position <= self.books.maximum('position')
   end  
 
-  def create_book(title, subtitle=nil, position=nil)
-    book = self.books.create(title: title, subtitle: subtitle)
+  def add_book(book, position=nil)
+    self.books << book
     move_book(book, position) unless position.nil?
     return book
   end

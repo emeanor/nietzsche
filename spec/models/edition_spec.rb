@@ -12,19 +12,20 @@ RSpec.describe Edition, type: :model do
   end
 
 
-  describe 'create_book' do
+  describe 'add_book' do
+    let(:book) { create(:book) }
 
-    it 'should create a new book associated with the edition' do
-      expect { edition.create_book('Test') }.to change { edition.books.count }.by(1)
+    it 'should add the book to the edition' do
+      expect { edition.add_book(book) }.to change { edition.books.count }.by(1)
     end
 
     context 'when a position argument is passed' do
-      let!(:book1) { edition.create_book('Book 1') }
-      let!(:book2) { edition.create_book('Book 2') }
-      let!(:book3) { edition.create_book('Book 3') }
-      let!(:valid_position) { edition.create_book(title='Valid Position', subtitle=nil, position=2) }
-      let!(:invalid_position_high) { edition.create_book(title='Invalid Position High', position=20) }
-      let!(:invalid_position_low) { edition.create_book(title='Invalid Position Low', position=-5) }
+      let!(:book1) { edition.add_book(create(:book)) }
+      let!(:book2) { edition.add_book(create(:book)) }
+      let!(:book3) { edition.add_book(create(:book)) }
+      let!(:valid_position) { edition.add_book(create(:book, title: 'Valid Position'), 2) }
+      let!(:invalid_position_high) { edition.add_book(create(:book, title: 'Invalid Position High'), 20) }
+      let!(:invalid_position_low) { edition.add_book(create(:book, title: 'Invalid Position Low'), -2) }
 
       context 'when position is valid' do
         it 'should create the book at the correct position' do
@@ -42,9 +43,9 @@ RSpec.describe Edition, type: :model do
     end
 
     context 'when no position argument is passed' do
-      let!(:book) { edition.create_book('Test') }
+      let!(:book) { edition.add_book(create(:book)) }
 
-      it 'should create the book at the end of the edition' do
+      it 'should add the book at the end of the edition' do
         expect(edition.books.maximum('position')).to eq (edition.books.where(id: book.id).first.position)
       end
     end
@@ -53,7 +54,7 @@ RSpec.describe Edition, type: :model do
 
 
   describe 'destroy_book' do
-    let!(:book) { edition.create_book('Test') }
+    let!(:book) { edition.add_book(create(:book)) }
 
     it 'should remove the book from the edition' do
       expect { edition.destroy_book(book) }.to change { edition.books.count }.by(-1)
@@ -62,9 +63,9 @@ RSpec.describe Edition, type: :model do
 
 
   describe 'move_book' do
-    let!(:book1) { edition.create_book('Book 1') }
-    let!(:book2) { edition.create_book('Book 2') }
-    let!(:book3) { edition.create_book('Book 3') }
+    let!(:book1) { edition.add_book(create(:book)) }
+    let!(:book2) { edition.add_book(create(:book)) }
+    let!(:book3) { edition.add_book(create(:book)) }
 
     before do
       edition.move_book(book1, position=3)
