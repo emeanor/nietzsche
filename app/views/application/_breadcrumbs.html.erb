@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <%= link_to sanitize(t('editions.title_and_editor', title: current.edition.title, editor: current.editor.full_name)), edition_path(current.edition) %>
+      <%= link_to sanitize(t('editions.title_and_owner', title: current.edition.title, owner: current.owner.full_name)), edition_path(current.edition) %>
     </li>
 
     <% if current.instance_of?(Book) %>

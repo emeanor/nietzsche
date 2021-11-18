@@ -38,7 +38,7 @@ en:
     heading_all: 'All Editions'
     heading_navbar: 'Editions'
     edited_by: 'Edited by %{username}'
-    title_and_editor: '<em>%{title}</em> (ed. %{editor})'
+    title_and_owner: '<em>%{title}</em> (ed. %{owner})'
   books:
     heading: 'Book %{book_number}'
     number_and_title: 'Book %{number}: %{title}'

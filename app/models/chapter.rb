@@ -1,4 +1,5 @@
 class Chapter < ApplicationRecord
+  include Division
 
   belongs_to :book
   acts_as_list scope: :book
@@ -6,23 +7,20 @@ class Chapter < ApplicationRecord
   has_many :chapter_texts
   has_many :texts, -> { order(position: :asc) }, through: :chapter_texts
 
+  alias_attribute :children, :texts
+
+  alias_method :has_texts?, :has_children?
+  alias_method :has_text?, :has_child?
+
   validates :title, length: { maximum: 255 }, presence: true
   validates :subtitle, length: { maximum: 255 }
 
   def edition
-    self.book.edition
+    self.book.owner
   end
 
-  def editor
+  def owner
     self.edition.user
-  end
-  
-  def has_subtitle?
-    self.subtitle.present?
-  end
-
-  def has_text?(text_id)
-    self.texts.where(id: text_id).exists?
   end
 
   def valid_position?(position)

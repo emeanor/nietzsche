@@ -7,7 +7,7 @@
     <% end %>
 
     <div <%= @edition.has_subtitle? ? '' : 'class=mt-4'  %>>
-      <%= t('editions.edited_by', username: @edition.editor.full_name) %>
+      <%= t('editions.edited_by', username: @edition.owner.full_name) %>
     </div>
   </div>
 
