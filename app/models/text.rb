@@ -16,11 +16,11 @@ class Text < ApplicationRecord
   validates :url_slug, presence: true, uniqueness: { case_sensitive: false }
 
   def is_duplicate?
-    !self.duplicate.blank?
+    self.duplicate.present?
   end
   
   def has_book_number?
-    !self.book_number.blank?
+    self.book_number.present?
   end
 
   def roman_book_number

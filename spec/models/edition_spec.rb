@@ -22,9 +22,9 @@ RSpec.describe Edition, type: :model do
       let!(:book1) { edition.add_book(create(:book)) }
       let!(:book2) { edition.add_book(create(:book)) }
       let!(:book3) { edition.add_book(create(:book)) }
-      let!(:valid_position) { edition.add_book(create(:book), 2) }
-      let!(:invalid_position_high) { edition.add_book(create(:book), 20) }
-      let!(:invalid_position_low) { edition.add_book(create(:book), -2) }
+      let!(:valid_position) { edition.add_book(create(:book), position = 2) }
+      let!(:invalid_position_high) { edition.add_book(create(:book), position = 20) }
+      let!(:invalid_position_low) { edition.add_book(create(:book), position = -2) }
 
       context 'when position is valid' do
         it 'should add the book at the correct position' do
@@ -67,7 +67,7 @@ RSpec.describe Edition, type: :model do
     let!(:book3) { edition.add_book(create(:book)) }
 
     before do
-      edition.move_book(book1, position=3)
+      edition.move_book(book1, position = 3)
     end
 
     it 'should change the position of the book within the edition' do
