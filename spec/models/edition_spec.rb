@@ -28,13 +28,13 @@ RSpec.describe Edition, type: :model do
       let!(:invalid_position_low) { edition.add_book(create(:book, title: 'Invalid Position Low'), -2) }
 
       context 'when position is valid' do
-        it 'should create the book at the correct position' do
+        it 'should add the book at the correct position' do
           expect(valid_position.position).to be(2) 
         end
       end
 
       context 'when position is invalid' do
-        it 'should create the book at the end of the edition' do
+        it 'should add the book at the end of the edition' do
           expect(invalid_position_high.position).to be(5)
           expect(invalid_position_low.position).to be(6)
         end
