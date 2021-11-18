@@ -8,8 +8,6 @@ class Book < ApplicationRecord
 
   alias_attribute :children, :chapters
 
-  alias_method :has_chapters?, :has_children?
-  alias_method :has_chapter?, :has_child?
   alias_method :add_chapter, :add_child
   alias_method :destroy_chapter, :destroy_child
   alias_method :move_chapter, :move_child

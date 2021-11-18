@@ -9,9 +9,6 @@ class Chapter < ApplicationRecord
 
   alias_attribute :children, :texts
 
-  alias_method :has_texts?, :has_children?
-  alias_method :has_text?, :has_child?
-
   validates :title, length: { maximum: 255 }, presence: true
   validates :subtitle, length: { maximum: 255 }
 
@@ -28,18 +25,18 @@ class Chapter < ApplicationRecord
   end
 
   def add_text(text, position=nil)
-    self.texts << text unless self.has_text?(text.id)
+    self.texts << text unless self.texts.exists?(text.id)
     move_text(text, position) unless position.nil?
     return text
   end
 
   def remove_text(text)
-    return unless self.has_text?(text.id)
+    return unless self.texts.exists?(text.id)
     self.chapter_texts.destroy(self.chapter_texts.where(text: text).first.id)
   end
 
   def move_text(text, position)
-    return unless self.has_text?(text) && position.is_a?(Integer)
+    return unless self.texts.exists?(text.id) && position.is_a?(Integer)
 
     chapter_text = self.chapter_texts.where(text: text).first
     valid_position?(position) ? chapter_text.set_list_position(position) : chapter_text.move_to_bottom

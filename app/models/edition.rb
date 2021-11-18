@@ -6,8 +6,6 @@ class Edition < ApplicationRecord
 
   alias_attribute :children, :books
 
-  alias_method :has_chapters?, :has_children?
-  alias_method :has_chapter?, :has_child?
   alias_method :add_book, :add_child
   alias_method :destroy_book, :destroy_child
   alias_method :move_book, :move_child

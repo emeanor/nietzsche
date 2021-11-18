@@ -19,7 +19,7 @@
             <% @edition.books.each do |book| %>
                 <li>
                   <%= link_to book.has_subtitle? ? "#{book.title}: #{book.subtitle}" : "#{book.title}", edition_book_path(@edition, book.position) %>
-                  <% if book.has_chapters? %>
+                  <% if book.chapters.any? %>
                     <ol class="mb-2">
                       <% book.chapters.each do |chapter| %>
                         <li><%= link_to chapter.title, edition_book_chapter_path(@edition, book.position, chapter.position) %></li>
