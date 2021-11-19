@@ -53,3 +53,9 @@ en:
     number_and_title: '%{number}. %{title}'
     kgw_numbers_long: 'KGW 8: %{notebook_number}[%{text_number}]'
     kgw_numbers_short: '%{notebook_number}[%{text_number}]'
+  users:
+    topnav:
+      register: 'Create Account'
+      sign_in: 'Sign In'
+      sign_out: 'Sign Out'
+      settings: 'My Account'

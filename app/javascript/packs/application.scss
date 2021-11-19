@@ -51,8 +51,23 @@ body {
   }
 
   #user-bar {
-    height: 25px;
+    height: 30px;
     background-color: $secondary;
+
+    #content {
+      width: 80%;
+      margin: auto;
+      padding-top: 5px;
+      color: white;
+      text-align: right;
+      font-size: small;
+      font-family: Helvetica, sans-serif;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
   }
 }
 
