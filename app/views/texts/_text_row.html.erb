@@ -2,7 +2,7 @@
   <div class="card-header">
     <%= link_to t('texts.number_and_title', number: text.url_slug, title: text.title), text_path(text.url_slug), class: 'fs-5' %><br />
 
-    <% if text.has_book_number? %>
+    <% if text.book_number.present? %>
         <%= t('books.book_number_brackets', book_number: text.roman_book_number) %>
       <% end %>
 
