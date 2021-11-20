@@ -15,6 +15,6 @@
   <div class="col">
     Nietzsche's Placement<br />
     <!-- TODO: This needs to link to something appropriate. The texts filtered by book number? -->
-    <%= text.has_book_number? ? link_to(t('books.heading', book_number: text.book_number), text_path(text.url_slug), class: 'fw-bold') : 'N/A' %>
+    <%= text.book_number.present? ? link_to(t('books.heading', book_number: text.book_number), text_path(text.url_slug), class: 'fw-bold') : 'N/A' %>
   </div>
 </div>

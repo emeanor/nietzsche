@@ -18,13 +18,9 @@ class Text < ApplicationRecord
   def is_duplicate?
     self.duplicate.present?
   end
-  
-  def has_book_number?
-    self.book_number.present?
-  end
 
   def roman_book_number
-    return unless self.has_book_number?
+    return unless self.book_number.present?
 
     case self.book_number
       when 1
