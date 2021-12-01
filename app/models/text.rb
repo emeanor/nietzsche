@@ -1,3 +1,5 @@
+require 'redcarpet'
+
 class Text < ApplicationRecord
 
   before_validation :set_url_slug
@@ -32,6 +34,12 @@ class Text < ApplicationRecord
       when 4
         'IV'
     end
+  end
+
+  def formatted_text
+    renderer = Redcarpet::Render::HTML.new(render_options = { hard_wrap: true })
+    markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+    markdown.render(self.text)
   end
 
 
