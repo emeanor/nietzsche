@@ -1,4 +1,4 @@
-
+# Nietzsche's "Will to Power"
 
 Friedrich Nietzsche's late notebooks contain an outline of 374 texts to be included in a work to be called "The Will to Power." While he did not live to complete that work, the texts that he earmarked for inclusion are still extant in his notebook material.
 
